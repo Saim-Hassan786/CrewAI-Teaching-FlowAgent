@@ -1,56 +1,43 @@
-# {{crew_name}} Crew
 
-Welcome to the {{crew_name}} Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+# Teaching-Flow Agent with CrewAI
 
-## Installation
+CrewAI is a powerful framework for building autonomous AI agents that work in collaboration. One of its core concepts is the **Flow Agent**, which allows developers to define a structured sequence of tasks that agents should follow.
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
-First, if you haven't already, install uv:
+## Prerequisites
 
-```bash
-pip install uv
-```
+Before you begin, ensure you have:
 
-Next, navigate to your project directory and install the dependencies:
+- Python 3.10+
+- `crewai` installed (`pip install crewai`)
+- OpenAI API key (or other LLM provider credentials)
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
+## What is a Flow Agent?
 
-### Customizing
+A **Flow Agent** in CrewAI is designed to execute tasks in a **step-by-step sequence**, passing outputs from one task to the next. It is ideal for scenarios that need structured workflows, like content creation pipelines, research tasks, or data processing.
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+## Teaching-Flow Agent
 
-- Modify `src/flow_exp_orches/config/agents.yaml` to define your agents
-- Modify `src/flow_exp_orches/config/tasks.yaml` to define your tasks
-- Modify `src/flow_exp_orches/crew.py` to add your own logic, tools and specific args
-- Modify `src/flow_exp_orches/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+### 1. Install CrewAI
 
 ```bash
-crewai run
-```
+pip install crewai
+````
 
-This command initializes the flow-exp-orches Crew, assembling the agents and assigning them tasks as defined in your configuration.
+## Tips for Effective Flow Agents
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+* Ensure each task has a **clear description** and **output expectation**.
+* Chain tasks logically – each output should be usable as input for the next.
+* Use `verbose=True` for debugging or learning purposes.
 
-## Understanding Your Crew
+## Use Cases
 
-The flow-exp-orches Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+* Content writing pipelines
+* Research + summarization
+* Multi-step data transformations
+* Travel itinerary planning
 
-## Support
+## Summary
 
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
+Flow Agents in CrewAI enable you to create structured, multi-step AI workflows. By defining tasks, assigning them to agents, and linking them in a flow, you can build powerful autonomous systems tailored to your specific goals.
 
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
